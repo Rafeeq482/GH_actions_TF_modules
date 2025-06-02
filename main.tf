@@ -6,8 +6,8 @@ module "ec2_instance" {
   source             = "./modules/ec2"
   ami                = "ami-06b6e5225d1db5f46" 
   instance_type      = "t2.micro"
-  key_name           = "github-action"
-  subnet_id          = "subnet-075bb40922d89bb13"
+  key_name           = "SNS"
+  subnet_id          = "subnet-06cdf6a7520a97aee"
   security_group_ids = ["sg-0e584f891639bbf98"]
   tags = {
     Name = "rds-mysql"
