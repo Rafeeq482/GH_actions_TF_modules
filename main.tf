@@ -34,42 +34,42 @@ module "vpc" {
 }
 
 
-module "db_subnet_group" {
-  source      = "./modules/db_subnet_group"
-  name        = "my-db-subnet-group"
-  description = "Subnet group for RDS"
+# module "db_subnet_group" {
+#   source      = "./modules/db_subnet_group"
+#   name        = "my-db-subnet-group"
+#   description = "Subnet group for RDS"
 
-  subnet_ids = [
-  "subnet-0be48a5104a8719db", "subnet-0c2ef04047ae31018"]
+#   subnet_ids = [
+#   "subnet-0be48a5104a8719db", "subnet-0c2ef04047ae31018"]
 
 
 
-  tags = {
-    Name        = "my-db-subnet-group"
-    Environment = "production"
-    Team        = "devops"
-    Project     = "rds-mysql"
-  }
-}
+#   tags = {
+#     Name        = "my-db-subnet-group"
+#     Environment = "production"
+#     Team        = "devops"
+#     Project     = "rds-mysql"
+#   }
+# }
 
-module "rds" {
-  source = "./modules/rds"
+# module "rds" {
+#   source = "./modules/rds"
 
-  db_subnet_group_name = module.db_subnet_group.db_subnet_group_name
+#   db_subnet_group_name = module.db_subnet_group.db_subnet_group_name
 
-  identifier             = "mydb-instance"
-  allocated_storage      = 20
-  engine                 = "mysql"
-  engine_version         = "8.0"
-  instance_class         = "db.t3.micro"
-  db_name                = "mydatabase"
-  username               = "admin"
-  password               = "krishna123" # sensitive input
-  parameter_group_name   = "default.mysql8.0"
-  publicly_accessible    = false
-  vpc_security_group_ids = ["sg-01d6725cda2d2e40d"]
+#   identifier             = "mydb-instance"
+#   allocated_storage      = 20
+#   engine                 = "mysql"
+#   engine_version         = "8.0"
+#   instance_class         = "db.t3.micro"
+#   db_name                = "mydatabase"
+#   username               = "admin"
+#   password               = "krishna123" # sensitive input
+#   parameter_group_name   = "default.mysql8.0"
+#   publicly_accessible    = false
+#   vpc_security_group_ids = ["sg-01d6725cda2d2e40d"]
 
-  multi_az     = false
-  storage_type = "gp2"
-}
+#   multi_az     = false
+#   storage_type = "gp2"
+# }
 
