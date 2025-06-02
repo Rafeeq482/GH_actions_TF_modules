@@ -25,7 +25,7 @@ variable "subnet_id" {
 variable "security_group_ids" {
   type        = list(string)
   description = "List of security group IDs"
-  default     = ["sg-0fef0819f181d85b9"]
+  default     = ["sg-0f06a82ac5865d1b8"]
 }
 
 variable "tags" {
