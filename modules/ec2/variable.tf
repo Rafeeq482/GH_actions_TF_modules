@@ -1,7 +1,7 @@
 variable "ami" {
   type        = string
   description = "AMI ID to use for the instance"
-  default     = "ami-06b6e5225d1db5f46"
+  default     = "ami-0e35ddab05955cf57"
 }
 
 variable "instance_type" {
@@ -13,19 +13,19 @@ variable "instance_type" {
 variable "key_name" {
   type        = string
   description = "Key pair name for SSH access"
-  default     = "github-action"
+  default     = "SNS"
 }
 
 variable "subnet_id" {
   type        = string
   description = "Subnet ID"
-  default     = "subnet-075bb40922d89bb13"
+  default     = "subnet-06cdf6a7520a97aee"
 }
 
 variable "security_group_ids" {
   type        = list(string)
   description = "List of security group IDs"
-  default     = ["sg-0e584f891639bbf98"]
+  default     = ["sg-0fef0819f181d85b9"]
 }
 
 variable "tags" {

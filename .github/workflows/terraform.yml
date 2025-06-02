@@ -40,9 +40,7 @@ jobs:
       - name: Validate Terraform
         run: terraform validate
      
-  
- 
-     
+        
       - name: Plan Terraform
         run: terraform plan -out=tfplan
 

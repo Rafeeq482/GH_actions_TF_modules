@@ -8,7 +8,7 @@ module "ec2_instance" {
   instance_type      = "t2.micro"
   key_name           = "SNS"
   subnet_id          = "subnet-06cdf6a7520a97aee"
-  security_group_ids = ["sg-0e584f891639bbf98"]
+  security_group_ids = ["sg-0fef0819f181d85b9"]
   tags = {
     Name = "rds-mysql"
   }
@@ -32,7 +32,6 @@ module "vpc" {
   private_subnets    = ["10.1.101.0/24", "10.1.102.0/24"]
   availability_zones = ["ap-south-1a", "ap-south-1b"]
 }
-
 
 # module "db_subnet_group" {
 #   source      = "./modules/db_subnet_group"
