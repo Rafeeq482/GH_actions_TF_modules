@@ -35,9 +35,9 @@ resource "aws_subnet" "private" {
   }
 }
 
-resource "aws_eip" "nat" {
-  count = 1
-  
+
+locals {
+  existing_eip_allocation_id = "eipalloc-0986983e5dd4fae33"
 }
 
 resource "aws_nat_gateway" "nat" {
