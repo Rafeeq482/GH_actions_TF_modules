@@ -5,7 +5,7 @@ provider "aws" {
 module "ec2_instance" {
   source             = "./modules/ec2"
   ami                = "ami-0e35ddab05955cf57" 
-  instance_type      = "t2.micro"
+  instance_type      = "t3.micro"
   key_name           = "SNS"
   subnet_id          = "subnet-06cdf6a7520a97aee"
   security_group_ids = ["sg-0f06a82ac5865d1b8"]
