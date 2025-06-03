@@ -4,34 +4,36 @@ provider "aws" {
 
 module "ec2_instance" {
   source             = "./modules/ec2"
-  ami                = "ami-06b6e5225d1db5f46" 
+  ami                = "ami-0e35ddab05955cf57" 
   instance_type      = "t2.micro"
   key_name           = "SNS"
   subnet_id          = "subnet-06cdf6a7520a97aee"
-  security_group_ids = ["sg-0fef0819f181d85b9"]
+  security_group_ids = ["sg-0f06a82ac5865d1b8"]
   tags = {
     Name = "rds-mysql"
   }
 }
 
-module "s3_bucket" {
-  source            = "./modules/s3_bucket"
-  bucket_name       = "bombay-saphire-123"
-  enable_versioning = true
-  enable_encryption = true
+# module "s3_bucket" {
+#   source            = "./modules/s3_bucket"
+#   bucket_name       = "bombay-saphire-123"
+#   enable_versioning = true
+#   enable_encryption = true
 
-  tags = {
-    Environment = "dev"
-    Project     = "s3-module-demo"
-  }
-}
-module "vpc" {
-  source             = "./modules/vpc"
-  vpc_cidr           = "10.1.0.0/16"
-  public_subnets     = ["10.1.1.0/24", "10.1.2.0/24"]
-  private_subnets    = ["10.1.101.0/24", "10.1.102.0/24"]
-  availability_zones = ["ap-south-1a", "ap-south-1b"]
-}
+#   tags = {
+#     Environment = "dev"
+#     Project     = "s3-module-demo"
+#   }
+# }
+
+
+# module "vpc" {
+#   source             = "./modules/vpc"
+#   vpc_cidr           = "10.1.0.0/16"
+#   public_subnets     = ["10.1.1.0/24", "10.1.2.0/24"]
+#   private_subnets    = ["10.1.101.0/24", "10.1.102.0/24"]
+#   availability_zones = ["ap-south-1a", "ap-south-1b"]
+# }
 
 # module "db_subnet_group" {
 #   source      = "./modules/db_subnet_group"
