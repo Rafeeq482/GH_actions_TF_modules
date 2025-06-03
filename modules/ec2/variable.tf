@@ -7,7 +7,7 @@ variable "ami" {
 variable "instance_type" {
   type        = string
   description = "Type of EC2 instance"
-  default     = "t2.micro"
+  default     = "t3.micro"
 }
 
 variable "key_name" {
@@ -25,7 +25,7 @@ variable "subnet_id" {
 variable "security_group_ids" {
   type        = list(string)
   description = "List of security group IDs"
-  default     = ["sg-0f06a82ac5865d1b8"]
+  default     = ["sg-0194e3f72b2b56c0e"]
 }
 
 variable "tags" {
