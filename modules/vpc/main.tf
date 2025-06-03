@@ -36,13 +36,18 @@ resource "aws_subnet" "private" {
 }
 
 
+locals {
+  existing_eip_allocation_id = "eipalloc-0986983e5dd4fae33"
+}
+
 resource "aws_nat_gateway" "nat" {
-  allocation_id = aws_eip.nat[0].id
+  allocation_id = local.existing_eip_allocation_id
   subnet_id     = aws_subnet.public[0].id
   tags = {
     Name = "main-nat"
   }
 }
+
 
 resource "aws_route_table" "public" {
   vpc_id = aws_vpc.main.id
